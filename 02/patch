@@ -1,0 +1,11 @@
+--- Makefile.old	2024-02-02 18:33:29.739000000 +0100
++++ Makefile	2024-02-02 18:33:24.560000000 +0100
+@@ -2,7 +2,7 @@
+ VERSION = 6
+ PATCHLEVEL = 7
+ SUBLEVEL = 0
+-EXTRAVERSION =
++EXTRAVERSION =-thor_kernel
+ NAME = Hurr durr I'ma ninja sloth
+ 
+ # *DOCUMENTATION*

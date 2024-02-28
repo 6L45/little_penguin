@@ -1,0 +1,13 @@
+Feb 27 13:13:56 lfs kernel: [  220.568432] main: loading out-of-tree module taints kernel.
+Feb 27 13:13:56 lfs kernel: [  220.570052] Hello World!
+Feb 27 13:15:50 lfs kernel: [  334.646799] fortytwo: misc_read called
+Feb 27 13:16:04 lfs kernel: [  349.080396] fortytwo: misc_write called
+Feb 27 13:16:09 lfs kernel: [  354.004677] fortytwo: misc_write called
+Feb 27 13:17:07 lfs kernel: [  412.023454] debugfs: foo_read called
+Feb 27 13:17:16 lfs kernel: [  420.971391] debugfs: foo_read called
+Feb 27 13:17:41 lfs kernel: [  445.562966] fortytwo: misc_write called
+Feb 27 13:17:47 lfs kernel: [  452.033430] fortytwo: misc_write called
+Feb 27 13:17:51 lfs kernel: [  456.051767] fortytwo: misc_write called
+Feb 27 13:18:00 lfs kernel: [  465.301628] fortytwo: misc_read called
+Feb 27 13:18:06 lfs kernel: [  470.889439] fortytwo: misc_write called
+Feb 27 13:18:08 lfs kernel: [  472.972929] fortytwo: misc_read called

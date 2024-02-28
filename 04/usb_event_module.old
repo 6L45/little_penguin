@@ -1,0 +1,54 @@
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/usb.h>
+#include <linux/hid.h>
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("mberengu");
+MODULE_DESCRIPTION("Hey world!");
+
+static int usb_event_probe(struct usb_interface *interface, const struct usb_device_id *id)
+{
+	printk(KERN_INFO "Halohaaa!!!\n");
+	return 0;
+}
+
+static void usb_event_disconnect(struct usb_interface *interface)
+{
+	printk(KERN_INFO "Goodbye.\n");
+}
+
+static const struct usb_device_id usb_event_table[] = {
+	{ USB_INTERFACE_INFO(USB_INTERFACE_CLASS_HID,
+			USB_INTERFACE_SUBCLASS_BOOT, USB_INTERFACE_PROTOCOL_MOUSE) },
+	{ },
+};
+
+MODULE_DEVICE_TABLE(usb, usb_event_table);
+
+static struct usb_driver usb_event_driver = {
+    .name = "usb_event",		// Nom du pilote USB
+    .probe = usb_event_probe,		// Fonction appelée lors de la détection d'un périphérique USB correspondant
+    .disconnect = usb_event_disconnect,	// Fonction appelée lors de la déconnexion d'un périphérique USB
+    .id_table = usb_event_table,	// Table d'identification des périphériques pris en charge par le pilote
+};
+
+static int __init	hello_init(void)
+{
+	int	result;
+	
+	result = usb_register(&usb_event_driver);
+	if (result)
+		printk(KERN_ERR "USB Event module: Failed to register driver \n");
+	return (result);
+}
+
+static void __exit	hello_exit(void)
+{
+	usb_deregister(&usb_event_driver);
+	printk(KERN_INFO "Cleaning up module.\n");
+}
+
+module_init(hello_init);
+module_exit(hello_exit);

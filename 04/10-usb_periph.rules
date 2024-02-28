@@ -1,0 +1,6 @@
+# Charger le module lorsque toute souris est connectée
+ACTION=="add", SUBSYSTEM=="usb", RUN+="/sbin/modprobe usb_event_module"
+
+# Décharger le module lorsque toute souris est déconnectée
+ACTION=="remove", SUBSYSTEM=="usb", RUN+="/sbin/rmmod usb_event_module"
+
