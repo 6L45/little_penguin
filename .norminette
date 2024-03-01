@@ -1,0 +1,1 @@
+/usr/src/linux-6.7/scripts/checkpatch.pl file.c -no-tree -file --strict
