@@ -32,11 +32,7 @@ static int procmnt_show(struct seq_file* m, void* v)
 
 	// mnt      = variable qui représente un pointeur vers chaque élément de la liste
 	// current  = tete de list sur lequel commence l iteration. pointer vers le "current" process
-	// mnt_list = element crée par l'itération
-	
-	// pseudo python
-	// for mnt in current->etc..:
-	// 	mnt_list.append(mnt)
+	// mnt_list = element suivant dans la list
 	list_for_each_entry(mnt, &current->nsproxy->mnt_ns->list, mnt_list)
 	{
 		//Cette structure représente un chemin dans le système de fichiers.s
